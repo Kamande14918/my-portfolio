@@ -10,15 +10,17 @@
     "bootstrap": "^5.3.3",
     "my-portfolio": "file:",
     "react": "^19.0.0",
+    "react-bootstrap": "^2.10.9",
     "react-dom": "^19.0.0",
-    "react-scripts": "^3.0.1",
+    "react-scripts": "^5.0.1",
     "sass": "^1.85.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
+    "test": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts test",
+    "build:css": "sass src/styles/index.scss src/styles/index.css",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
