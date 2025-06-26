@@ -1,12 +1,43 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, Button, Badge, Modal } from 'react-bootstrap';
+import ImageSlider from './ImageSlider';
 import './Projects.css';
 
 const projects = [
   { 
+    title: "Advanced Mobile Diagnostic Tool – Intelligent Android Device Troubleshooting Suite", 
+    shortDescription: "Cross-platform diagnostic application for Android device troubleshooting with wireless ADB connectivity and comprehensive system diagnostics.",
+    description: "A cross-platform diagnostic application designed to identify and resolve complex Android device issues such as faulty USB ports, boot loops, no display, and system instability. Built with a React frontend and Flask backend, the tool offers real-time device monitoring, wireless ADB connectivity, recovery utilities, and comprehensive system diagnostics—all accessible through a clean, modular interface.",
+    images: [
+      `${process.env.PUBLIC_URL}/images/diagnostic-tool-1.png`,
+      `${process.env.PUBLIC_URL}/images/diagnostic-tool-2.png`,
+      `${process.env.PUBLIC_URL}/images/diagnostic-tool-3.png`,
+      `${process.env.PUBLIC_URL}/images/diagnostic-tool-4.png`,
+      `${process.env.PUBLIC_URL}/images/diagnostic-tool-5.png`
+    ],
+    image: `${process.env.PUBLIC_URL}/images/diagnostic-tool-1.png`, // Fallback for single image display
+    url: "https://github.com/Kamande14918/advanced-mobile-diagnostic-tool",
+    features: [
+      "Core Diagnostics: Retrieve device metadata (model, manufacturer, Android version, build number)",
+      "Advanced Issue Resolution: Diagnose faulty USB ports using wireless ADB and Bluetooth alternatives",
+      "Boot Loop Resolution: Resolve boot loops and hanging issues via safe/recovery mode",
+      "Display Diagnostics: Address no-display problems with backlight testing and ADB-based fixes",
+      "Wireless Connectivity: Enable WiFi ADB for USB-free diagnostics and network device scanning",
+      "Recovery & Repair Tools: Boot into recovery or fastboot mode for advanced operations",
+      "Data Management: Backup and restore device data and apps with comprehensive logging",
+      "Real-time Monitoring: Monitor CPU, memory, storage, and battery health in real-time",
+      "Security & Privacy: Local-only execution with no external data transmission",
+      "Cross-platform Support: Works on Windows, macOS, and Linux with modular architecture"
+    ],
+    technologies: ["React.js", "Python", "Flask", "Flask-CORS", "ADB (Android Debug Bridge)", "Node.js", "PowerShell", "RESTful API"],
+    github: "https://github.com/Kamande14918/advanced-mobile-diagnostic-tool",
+    demo: null
+  },
+  { 
     title: "CBC Smart Learning App – AI-Powered Personalized Education for Kenya's CBC", 
     shortDescription: "An interactive, AI-driven educational platform tailored for Kenya's Competency-Based Curriculum (CBC). The app delivers personalized learning experiences through adaptive study plans, real-time progress tracking, gamification, and collaborative tools.",
     description: "An interactive, AI-driven educational platform tailored for Kenya's Competency-Based Curriculum (CBC). The app delivers personalized learning experiences through adaptive study plans, real-time progress tracking, gamification, and collaborative tools. It empowers students, teachers, and parents with actionable insights and multilingual support to enhance learning outcomes.", 
+    images: [`${process.env.PUBLIC_URL}/images/CBC-SmartLearning.jpg`],
     image: `${process.env.PUBLIC_URL}/images/CBC-SmartLearning.jpg`, 
     url: "https://project1.com",
     features: [
@@ -29,6 +60,7 @@ const projects = [
     title: "Blog App", 
     shortDescription: "Social blogging platform with user interactions",
     description: "A full-featured blogging platform built with Flask that enables users to create, share, and engage with content in a social environment. The app supports user authentication, multimedia uploads, post interactions (likes, comments, upvotes), and community-driven features like channels and spaces.",
+    images: [`${process.env.PUBLIC_URL}/images/Blog-app.png`],
     features: [
       "User Authentication: Secure registration and login system with session management",
       "Post Management: Create, edit, and delete blog posts with support for rich media (images/videos)",
@@ -43,18 +75,7 @@ const projects = [
     image: `${process.env.PUBLIC_URL}/images/Blog-app.png`, 
     github: "https://github.com/Kamande14918/blog-app",
     demo: null
-  },
-  // { 
-  //   title: "Project 3", 
-  //   shortDescription: "Description of project 3",
-  //   description: "Description of project 3", 
-  //   image: "/images/project3.png", 
-  //   url: "https://project3.com",
-  //   features: [],
-  //   technologies: [],
-  //   github: null,
-  //   demo: null
-  // },
+  }
   // Add more projects as needed
 ];
 
@@ -81,14 +102,12 @@ const Projects = () => {
             <Col md={4} key={idx} className="mb-4">
               <Card className="h-100 shadow-sm project-card">
                 <div className="project-image-container">
-                  <Card.Img 
-                    variant="top" 
-                    src={project.image} 
+                  <ImageSlider
+                    images={project.images || [project.image]}
                     alt={project.title}
-                    className="project-image"
-                    onError={(e) => {
-                      e.target.src = `${process.env.PUBLIC_URL}/images/placeholder-project.png`;
-                    }}
+                    height="250px"
+                    showIndicators={project.images && project.images.length > 1}
+                    showControls={project.images && project.images.length > 1}
                   />
                 </div>
                 <Card.Body className="d-flex flex-column">
@@ -119,14 +138,12 @@ const Projects = () => {
           {selectedProject && (
             <div>
               <div className="text-center mb-4">
-                <img 
-                  src={selectedProject.image} 
+                <ImageSlider
+                  images={selectedProject.images || [selectedProject.image]}
                   alt={selectedProject.title}
-                  className="img-fluid rounded"
-                  style={{ maxHeight: '300px' }}
-                  onError={(e) => {
-                    e.target.src = `${process.env.PUBLIC_URL}/images/placeholder-project.png`;
-                  }}
+                  height="350px"
+                  showIndicators={true}
+                  showControls={true}
                 />
               </div>
               

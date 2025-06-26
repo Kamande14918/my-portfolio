@@ -10,9 +10,10 @@
 }
 
 .project-image-container {
-  height: 200px;
+  height: 250px;
   overflow: hidden;
   background-color: #f8f9fa;
+  position: relative;
 }
 
 .project-image {
@@ -53,4 +54,43 @@
   .modal-dialog {
     margin: 1rem;
   }
-} 
+}
+
+/* ImageSlider in project cards */
+.project-card .image-slider-container {
+  height: 100%;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.project-card .single-image-container {
+  height: 100%;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.project-card .image-slider-container:hover {
+  transform: none;
+}
+
+.project-card:hover .image-slider-container img {
+  transform: scale(1.05);
+}
+
+/* Custom indicators for project cards */
+.project-card .custom-indicators {
+  bottom: 10px;
+}
+
+.project-card .indicator-dot {
+  width: 8px;
+  height: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+/* Modal ImageSlider styling */
+.modal .image-slider-container {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+}
