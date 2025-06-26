@@ -15,7 +15,7 @@ const Hero = () => {
                     </Col>
                     <Col md={6}>
                     {/* Hero image */}
-                    <img src="/images/Ken_img.jpg" alt="Kennedy Kamau Kamande" className="img-fluid animate__animated animate_zoomIn" />
+                    <img src={`${process.env.PUBLIC_URL}/images/Ken_img.jpg`} alt="Kennedy Kamau Kamande" className="img-fluid animate__animated animate_zoomIn" />
                     </Col>
                 </Row>
             </Container>

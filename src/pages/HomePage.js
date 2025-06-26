@@ -77,7 +77,7 @@ const HomePage = () => {
               <Card className="border-0 shadow-sm">
                 <Card.Img 
                   variant="top" 
-                  src="/images/CBC-SmartLearning.jpg" 
+                  src={`${process.env.PUBLIC_URL}/images/CBC-SmartLearning.jpg`} 
                   alt="CBC SmartLearning Platform"
                   style={{height: '200px', objectFit: 'cover'}}
                 />
@@ -91,7 +91,7 @@ const HomePage = () => {
               <Card className="border-0 shadow-sm">
                 <Card.Img 
                   variant="top" 
-                  src="/images/Blog-app.png" 
+                  src={`${process.env.PUBLIC_URL}/images/Blog-app.png`} 
                   alt="Blog Application"
                   style={{height: '200px', objectFit: 'cover'}}
                 />

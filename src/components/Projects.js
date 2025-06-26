@@ -7,7 +7,7 @@ const projects = [
     title: "CBC Smart Learning App – AI-Powered Personalized Education for Kenya's CBC", 
     shortDescription: "An interactive, AI-driven educational platform tailored for Kenya's Competency-Based Curriculum (CBC). The app delivers personalized learning experiences through adaptive study plans, real-time progress tracking, gamification, and collaborative tools.",
     description: "An interactive, AI-driven educational platform tailored for Kenya's Competency-Based Curriculum (CBC). The app delivers personalized learning experiences through adaptive study plans, real-time progress tracking, gamification, and collaborative tools. It empowers students, teachers, and parents with actionable insights and multilingual support to enhance learning outcomes.", 
-    image: "/images/CBC-SmartLearning.jpg", 
+    image: `${process.env.PUBLIC_URL}/images/CBC-SmartLearning.jpg`, 
     url: "https://project1.com",
     features: [
       "Personalized Learning Experience: AI-powered adaptive learning based on student performance and engagement",
@@ -40,7 +40,7 @@ const projects = [
       "Responsive UI: Clean, user-friendly interface built with HTML, CSS, and Mako templates"
     ],
     technologies: ["Python", "Flask", "SQLAlchemy", "HTML5", "CSS3", "Mako Templates", "SQLite", "Flask-Migrate", "Flask-Login", "WTForms"],
-    image: "/images/Blog-app.png", 
+    image: `${process.env.PUBLIC_URL}/images/Blog-app.png`, 
     github: "https://github.com/Kamande14918/blog-app",
     demo: null
   },
@@ -87,7 +87,7 @@ const Projects = () => {
                     alt={project.title}
                     className="project-image"
                     onError={(e) => {
-                      e.target.src = '/images/placeholder-project.png';
+                      e.target.src = `${process.env.PUBLIC_URL}/images/placeholder-project.png`;
                     }}
                   />
                 </div>
@@ -125,7 +125,7 @@ const Projects = () => {
                   className="img-fluid rounded"
                   style={{ maxHeight: '300px' }}
                   onError={(e) => {
-                    e.target.src = '/images/placeholder-project.png';
+                    e.target.src = `${process.env.PUBLIC_URL}/images/placeholder-project.png`;
                   }}
                 />
               </div>

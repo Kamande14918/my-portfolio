@@ -40,7 +40,7 @@ const About = () => {
           <Col lg={4} className="text-center mb-4">
             <div className="profile-image-container">
               <img 
-                src="/images/Kennedy_img.jpg" 
+                src={`${process.env.PUBLIC_URL}/images/Kennedy_img.jpg`} 
                 alt="Kennedy Kamau Kamande" 
                 className="profile-image img-fluid rounded-circle"
               />

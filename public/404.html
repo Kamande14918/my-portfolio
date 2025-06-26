@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kennedy Kamande - Portfolio</title>
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      var pathSegments = window.location.pathname.split('/').filter(function(segment) {
+        return segment !== '' && segment !== 'my-portfolio';
+      });
+      
+      var newUrl = window.location.protocol + '//' + window.location.hostname + 
+        (window.location.port ? ':' + window.location.port : '') +
+        '/my-portfolio/' +
+        (pathSegments.length > 0 ? '#/' + pathSegments.join('/') : '#/');
+      
+      window.location.replace(newUrl);
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to portfolio...</p>
+  </body>
+</html>
