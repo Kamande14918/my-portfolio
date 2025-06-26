@@ -1,3 +1,28 @@
+# Kennedy Kamande Portfolio - robots.txt
 # https://www.robotstxt.org/robotstxt.html
+
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap location
+Sitemap: https://kamande14918.github.io/my-portfolio/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1
+
+# Allow access to CSS and JS files
+Allow: /static/
+
+# Allow access to images
+Allow: /images/
+
+# Block any unnecessary files
+Disallow: /api/
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /build/
+
+# Additional directives for better SEO
+Host: https://kamande14918.github.io/my-portfolio/
