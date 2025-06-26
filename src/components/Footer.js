@@ -32,7 +32,7 @@ const Footer = () => {
           <Col md={4} className="mb-3">
             <h5>Social</h5>
             <ul className="list-unstyled">
-              <li><a href="https://twitter.com" className="text-light">Twitter</a></li>
+              {/* <li><a href="https://twitter.com" className="text-light">Twitter</a></li> */}
               <li><a href="https://github.com/Kamande14918" className="text-light">GitHub</a></li>
               <li><a href="http://www.linkedin.com/in/kennedy-kamande-100a78216" className="text-light">LinkedIn</a></li>
             </ul>
