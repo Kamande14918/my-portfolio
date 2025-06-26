@@ -3,9 +3,12 @@ import Hero from '../components/Hero';
 import SEOHelmet from '../components/SEOHelmet';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { generatePageSEO, trackSEOEvent } from '../utils/seoConfig';
 import './HomePage.css';
 
 const HomePage = () => {
+  const homePageSEO = generatePageSEO('home');
+  
   const quickHighlights = [
     {
       title: "Full-Stack Developer",
@@ -27,14 +30,19 @@ const HomePage = () => {
     }
   ];
 
+  // Track page view for SEO analytics
+  React.useEffect(() => {
+    trackSEOEvent('page_view', { page: 'home' });
+  }, []);
+
   return (
     <div className="home-page">
       <SEOHelmet
-        title="Kennedy Kamau Kamande - Full-Stack Developer & Electronics Engineer | Portfolio"
-        description="Passionate Electronics & Computer Engineering student at JKUAT specializing in full-stack development, AI integration, and hardware solutions. Expert in React.js, Node.js, Python, Flask, and machine learning."
-        keywords="Kennedy Kamande, Full-Stack Developer, Electronics Engineer, React.js, Node.js, Python, Flask, AI Integration, Machine Learning, JKUAT, Kenya, Web Development, Hardware Engineering, Software Developer, Portfolio"
-        url="/"
-        image="/images/Kennedy_img.jpg"
+        title={homePageSEO.title}
+        description={homePageSEO.description}
+        keywords={homePageSEO.keywords}
+        url={homePageSEO.path}
+        image={homePageSEO.image}
       />
       
       {/* Hero Section */}
