@@ -8,14 +8,14 @@ const Hero = () => {
             <Container>
                 <Row>
                     <Col md={6} className="text-center text-md-start">
-                    <h1 className="animate__animated animate_fadeInDown">Hello, I'm Kennedy Kamande</h1>
+                    <h1 className="animate__animated animate_fadeInDown">Hello, I'm Kennedy Kamau Kamande</h1>
                     <p className="lead animate__animated animate__fadeInUp">
-                        A passionate developer crafting digital experiences.
+                        🚀 Building Web Solutions. ⚙️ Debugging Dreams. 🎯Delivering Value.
                     </p>
                     </Col>
                     <Col md={6}>
-                    {/*You can include an image or an illustration. */}
-                    <img src="path_to_your_image.jpg" alt="Hero" className="img-fluid animate__animated animate_zoomIn" />
+                    {/* Hero image */}
+                    <img src="/images/Ken_img.jpg" alt="Kennedy Kamau Kamande" className="img-fluid animate__animated animate_zoomIn" />
                     </Col>
                 </Row>
             </Container>
