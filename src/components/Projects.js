@@ -30,7 +30,7 @@ const projects = [
       "Cross-platform Support: Works on Windows, macOS, and Linux with modular architecture"
     ],
     technologies: ["React.js", "Python", "Flask", "Flask-CORS", "ADB (Android Debug Bridge)", "Node.js", "PowerShell", "RESTful API"],
-    github: "https://github.com/Kamande14918/advanced-mobile-diagnostic-tool",
+    github: "https://github.com/Kamande14918/phone-diagnostic-tool",
     demo: null
   },
   { 
