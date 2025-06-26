@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const SEOHelmet = ({ 
+const React19SEOHelmet = ({ 
   title, 
   description, 
   keywords, 
@@ -19,7 +19,7 @@ const SEOHelmet = ({
       document.title = title;
     }
 
-    // Helper function to create or update meta tags
+    // Create or update meta tags
     const updateMetaTag = (name, content, property = false) => {
       if (!content) return;
       
@@ -84,10 +84,14 @@ const SEOHelmet = ({
     updateMetaTag('language', 'English');
     updateMetaTag('revisit-after', '7 days');
 
+    // Cleanup function to avoid memory leaks
+    return () => {
+      // React 19 handles cleanup automatically, but we can add specific cleanup if needed
+    };
   }, [title, description, keywords, image, url, type, author, fullUrl, fullImage]);
 
-  // React 19 component returns null for head management
+  // React 19 doesn't render anything for head management
   return null;
 };
 
-export default SEOHelmet;
+export default React19SEOHelmet;
